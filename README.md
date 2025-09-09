@@ -1,0 +1,2 @@
+# CharacterLcdGame
+RX210マイコンを使用したミニゲーム
