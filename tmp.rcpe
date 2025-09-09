@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MicomToolCommonProjectFile Version="1.00">
+  <CreatorType Name="CubeSuite+" Version="V7.00.00  [13 Jun 2018]" />
+  <Placeholders>
+    <PlaceholderPrefix>%</PlaceholderPrefix>
+    <PlaceholderPostfix>%</PlaceholderPostfix>
+  </Placeholders>
+  <Project Name="tmp" Type="Application">
+    <Files>
+      <Category Name="cs_plus">
+        <Category Name="header">
+          <Path>iodefine.h</Path>
+          <Path>sbrk.h</Path>
+          <Path>stacksct.h</Path>
+          <Path>typedefine.h</Path>
+          <Path>vect.h</Path>
+        </Category>
+        <Category Name="source">
+          <Path>hwsetup.c</Path>
+          <Path>vecttbl.c</Path>
+          <Path>resetprg.c</Path>
+          <Path>intprg.c</Path>
+          <Path>dbsct.c</Path>
+          <Path>sbrk.c</Path>
+        </Category>
+      </Category>
+      <Category Name="m_lib">
+        <Category Name="header">
+          <Path>my_define.h</Path>
+          <Path>timer.h</Path>
+          <Path>safe_input.h</Path>
+          <Path>lcd.h</Path>
+          <Path>lcd_define.h</Path>
+          <Path>switch.h</Path>
+          <Path>hwTimer.h</Path>
+          <Path>hwTimer_interrupt.h</Path>
+        </Category>
+        <Category Name="source">
+          <Path>timer.c</Path>
+          <Path>safe_input.c</Path>
+          <Path>lcd.c</Path>
+          <Path>switch.c</Path>
+          <Path>hwTimer.c</Path>
+        </Category>
+      </Category>
+      <Category Name="app">
+        <Category Name="header">
+          <Category Name="scene">
+            <Path>game.h</Path>
+            <Path>title.h</Path>
+            <Path>result.h</Path>
+          </Category>
+          <Category Name="object">
+            <Path>player.h</Path>
+            <Path>sprite.h</Path>
+            <Path>item.h</Path>
+            <Path>items.h</Path>
+          </Category>
+        </Category>
+        <Category Name="source">
+          <Path>main.c</Path>
+          <Category Name="scene">
+            <Path>game.c</Path>
+            <Path>title.c</Path>
+            <Path>result.c</Path>
+          </Category>
+          <Category Name="object">
+            <Path>player.c</Path>
+            <Path>sprite.c</Path>
+            <Path>item.c</Path>
+            <Path>items.c</Path>
+          </Category>
+        </Category>
+      </Category>
+    </Files>
+    <DebugOptions>
+      <ConnectSettings>
+        <MainClock>214748364000</MainClock>
+      </ConnectSettings>
+      <DebugToolSettings />
+    </DebugOptions>
+    <Device Series="RX">R5F5210BBxFP</Device>
+    <BuildOptions Name="CC-RX" Version="V2.08.00">
+      <BuildMode Name="DefaultBuild" Active="True">
+        <GeneralOptions>
+          <SimultaneouslyBuild>true</SimultaneouslyBuild>
+        </GeneralOptions>
+        <CompileOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-nofpu</Option>
+          <Option>-lang=c99</Option>
+          <Option>-include=.</Option>
+          <Option>-output=obj</Option>
+          <Option>-debug</Option>
+          <Option>-optimize=0</Option>
+          <Option>-nologo</Option>
+        </CompileOptions>
+        <AssembleOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-nofpu</Option>
+          <Option>-output=%BuildModeName%\%FileLeaf%.obj</Option>
+          <Option>-nologo</Option>
+        </AssembleOptions>
+        <LinkOptions>
+          <Option>-output=%BuildModeName%\%ProjectName%.abs</Option>
+          <Option>-list=%BuildModeName%\%ProjectName%.map</Option>
+          <Option>-nooptimize</Option>
+          <Option>-start=B_1,R_1,B_2,R_2,B,R,SU,SI/04,PResetPRG/0FFF00000,C_1,C_2,C,C$DSEC,C$BSEC,C$INIT,C$VTBL,C$VECT,D_1,D_2,D,P,PIntPRG,W_1,W_2,W,L/0FFF00100,FIXEDVECT/0FFFFFFD0</Option>
+          <Option>-rom=D=R,D_1=R_1,D_2=R_2</Option>
+          <Option>-nologo</Option>
+          <Option>-end</Option>
+          <Option>-input=%BuildModeName%\%ProjectName%.abs</Option>
+          <Option>-output=%BuildModeName%\%ProjectName%.mot</Option>
+          <Option>-form=stype</Option>
+          <Option>-exit</Option>
+          <PreLinker>Auto</PreLinker>
+        </LinkOptions>
+        <LibraryGenerateOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-nofpu</Option>
+          <Option>-head=runtime,stdio,stdlib,string,new</Option>
+          <Option>-output=%BuildModeName%\%ProjectName%.lib</Option>
+          <Option>-nologo</Option>
+          <GenerateMode>BuildOptionChanged</GenerateMode>
+        </LibraryGenerateOptions>
+        <LinkOrder>
+          <Path>DefaultBuild\dbsct.obj</Path>
+          <Path>DefaultBuild\intprg.obj</Path>
+          <Path>DefaultBuild\resetprg.obj</Path>
+          <Path>DefaultBuild\sbrk.obj</Path>
+          <Path>DefaultBuild\vecttbl.obj</Path>
+          <Path>DefaultBuild\hwsetup.obj</Path>
+          <Path>DefaultBuild\main.obj</Path>
+          <Path>DefaultBuild\timer.obj</Path>
+          <Path>DefaultBuild\safe_input.obj</Path>
+          <Path>DefaultBuild\lcd.obj</Path>
+          <Path>DefaultBuild\switch.obj</Path>
+          <Path>DefaultBuild\hwTimer.obj</Path>
+          <Path>DefaultBuild\game.obj</Path>
+          <Path>DefaultBuild\player.obj</Path>
+          <Path>DefaultBuild\sprite.obj</Path>
+          <Path>DefaultBuild\item.obj</Path>
+          <Path>DefaultBuild\items.obj</Path>
+          <Path>DefaultBuild\title.obj</Path>
+          <Path>DefaultBuild\result.obj</Path>
+        </LinkOrder>
+        <CommonOptions>
+          <IncludePathForC>.</IncludePathForC>
+        </CommonOptions>
+      </BuildMode>
+    </BuildOptions>
+  </Project>
+</MicomToolCommonProjectFile>
