@@ -2,7 +2,8 @@
 RX210マイコンを使用したミニゲーム<br>
 右から流れるアイテムを障害物をよけながら獲得していくゲーム
 # デモ
-https://github.com/user-attachments/assets/9ea67712-64cc-4591-a281-ee80ecc4a616
+
+https://github.com/user-attachments/assets/30839473-f2b9-4b1d-b849-944749e79862
 
 # 経緯
 characterLcdの授業中、文字ではない図形を表示させるサンプルが紹介され、<br>
