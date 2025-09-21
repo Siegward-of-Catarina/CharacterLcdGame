@@ -70,8 +70,4 @@ characterLcdの授業中、文字ではない図形を表示させるサンプ�
 * 所属　ポリテクセンター関西　Iotシステム科
 * E-mail kuramoto.riku.zzz@gmail.com
 
-# License
-
-[MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
 <p align="right">(<a href="#top">トップへ</a>)</p>
