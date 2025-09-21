@@ -37,7 +37,7 @@ characterLcdの授業中、文字ではない図形を表示させるサンプ�
 
 ### リアルタイム性の確保
 **問題**  
-ゲーム速度や、アニメーション更新のため周期的に処理する必要があった。<br>
+入力処理や、アニメーション更新のため周期的に処理する必要があった。<br>
 しかし授業では空ループで間隔制御していたので、リアルタイム性に欠けていた。<br>
 **解決**  
 - 初期段階では loop カウンタで処理周期を調整し、毎ループで全判定を通れるようにした。  
@@ -45,24 +45,6 @@ characterLcdの授業中、文字ではない図形を表示させるサンプ�
 → 安定した周期制御が可能になり、ゲームらしいリアルタイム性を確保できた。
 - LCDへの文字描画コマンドを授業段階では安定のため長めの同期を取っていたが、マニュアルの最小同期時間へ変更し高速化。
 - 再描画は更新があった時のみ実行し、最小限の再描画で済むようにした。
-```c
-typedef enum
-{
-    NONE            = 0,
-    PLAYER_DRAW     = 1 << 0,
-    PLAYER_CLEAR    = 1 << 1,
-    // 省略
-```
-```c
-obj->draw_flags |= PLAYER_CLEAR_DRAW;
-//...
-obj->draw_flags |= UI_DRAW;
-
-```
-```c
-if(  obj->draw_flags & ( PLAYER_CLEAR_DRAW | PLAYER_DRAW ) )
-```
----
 
 ### コードの整理
 **問題**  
@@ -90,6 +72,6 @@ if(  obj->draw_flags & ( PLAYER_CLEAR_DRAW | PLAYER_DRAW ) )
 
 # License
 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+[MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
